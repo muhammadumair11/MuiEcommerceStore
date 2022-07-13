@@ -4,13 +4,12 @@ import Button from '@mui/material/Button';
 import { ArrowDropDown } from '@mui/icons-material';
 
 function MyButton({ children, ...props }) {
-  const { variant, color, endIcon } = props;
-
-  console.log(props);
+  const { variant, color, endIcon, size } = props;
 
   const buttonProps = {
     color: color || 'primary',
     variant: variant || 'contained',
+    size,
     disableRipple: variant === 'text',
     endIcon: () => {
       if (endIcon) {
@@ -34,6 +33,7 @@ MyButton.propTypes = {
   children: PropTypes.node,
   variant: PropTypes.string,
   color: PropTypes.string,
+  size: PropTypes.string,
   endIcon: PropTypes.bool
 };
 

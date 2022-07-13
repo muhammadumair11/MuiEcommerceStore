@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 const MyImg = styled('img')(({ theme }) => ({
-  width: '100%'
+  width: '100%',
+  height: '100%'
 }));
 
 const MyBgImg = styled('div')(({ theme }) => ({
@@ -11,7 +12,7 @@ const MyBgImg = styled('div')(({ theme }) => ({
   height: '80%',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center'
+  backgroundPosition: 'top'
 }));
 
 function Image({ source, backgroundImg }) {

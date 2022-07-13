@@ -11,19 +11,21 @@ export const muiButton = {
     textSecondary: {
       color: customPrimaryColors.main
     },
-    sizeMedium: {
-      padding: '1rem 1.5rem'
-    },
     sizeSmall: {
-      padding: '.7rem 1rem'
+      padding: '1.5rem .2rem',
+      maxWidth: '150px'
+    },
+    sizeMedium: {
+      padding: '1.8rem 2rem',
+      maxWidth: '200px'
     },
     root: {
       fontFamily: fontFamilies.clashDisplay,
-      whiteSpace: 'nowrap'
+      whiteSpace: 'nowrap',
+      lineHeight: 0
     }
   },
   defaultProps: {
-    disableElevation: true,
-    size: 'medium'
+    disableElevation: true
   }
 };

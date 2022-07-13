@@ -1,11 +1,13 @@
 import React from 'react';
-import ProductList from './Common/ProuctCardList/ProductList';
+import Header from './Common/Header/Header';
+import CustomRoutes from './Routes';
 
 function App() {
   return (
-    <div className="App">
-      <ProductList />
-    </div>
+    <>
+      <Header />
+      <CustomRoutes />
+    </>
   );
 }
 

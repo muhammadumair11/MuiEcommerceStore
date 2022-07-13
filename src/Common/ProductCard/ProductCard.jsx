@@ -4,12 +4,12 @@ import React from 'react';
 import Image from '../../Components/Image';
 
 const MyBox = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.light,
   color: theme.palette.primary.main,
-  width: '250px',
-  minHeight: '400px',
-  height: 'contain',
-  padding: '10px'
+  height: '450px',
+
+  [theme.breakpoints.down('md')]: {
+    height: '250px'
+  }
 }));
 
 const TitleBox = styled('div')(({ theme }) => ({

@@ -1,48 +1,69 @@
+import { themeBreakPoints } from './breakPoints';
+
 const fontFamilies = {
   clashDisplay: '"Clash Display", sans-serif',
   satoshi: "'Manrope', sans-serif"
 };
 
-const typography = {
-  fontFamily: fontFamilies.clashDisplay,
-  lineHeight: '140%',
-  fontWeight: '400',
+function responsiveFontSizes(xs, sm, md, lg) {
+  return {
+    [`@media only screen and (min-width: ${themeBreakPoints.values.xs}px)`]: {
+      fontSize: `${xs}px`
+    },
+    [`@media only screen and (min-width: ${themeBreakPoints.values.sm}px)`]: {
+      fontSize: `${sm}px`
+    },
+    [`@media only screen and (min-width: ${themeBreakPoints.values.md}px)`]: {
+      fontSize: `${md}px`
+    },
+    [`@media only screen and (min-width: ${themeBreakPoints.values.lg}px)`]: {
+      fontSize: `${lg}px`
+    }
+  };
+}
 
-  h1: {
-    fontSize: '36px'
-  },
-  h2: {
-    fontSize: '32px'
-  },
-  h3: {
-    fontSize: '24px'
-  },
-  h4: {
-    fontSize: '20px'
-  },
-  h5: {
-    fontSize: '16px'
-  },
-  h6: {
-    fontSize: '14px'
-  },
+const typography = () => {
+  return {
+    fontFamily: fontFamilies.clashDisplay,
+    lineHeight: '140%',
+    fontWeight: '400',
 
-  body1: {
-    fontFamily: fontFamilies.satoshi,
-    fontSize: '18px'
-  },
-  body2: {
-    fontFamily: fontFamilies.satoshi,
-    fontSize: '16px'
-  },
-  subtitle1: {
-    fontFamily: fontFamilies.satoshi,
-    fontSize: '14px'
-  },
-  subtitle2: {
-    fontFamily: fontFamilies.satoshi,
-    fontSize: '12px'
-  }
+    h1: {
+      ...responsiveFontSizes(24, 28, 32, 36)
+    },
+    h2: {
+      ...responsiveFontSizes(22, 24, 28, 32)
+    },
+    h3: {
+      ...responsiveFontSizes(18, 20, 22, 24)
+    },
+    h4: {
+      ...responsiveFontSizes(18, 18, 18, 20)
+    },
+    h5: {
+      ...responsiveFontSizes(14, 14, 14, 16)
+    },
+    h6: {
+      ...responsiveFontSizes(8, 10, 12, 14)
+    },
+
+    body1: {
+      fontFamily: fontFamilies.satoshi,
+      ...responsiveFontSizes(14, 14, 16, 18)
+    },
+    body2: {
+      fontFamily: fontFamilies.satoshi,
+      ...responsiveFontSizes(10, 12, 14, 16)
+    },
+    subtitle1: {
+      fontFamily: fontFamilies.satoshi,
+      ...responsiveFontSizes(12, 12, 12, 14)
+    },
+    subtitle2: {
+      fontFamily: fontFamilies.satoshi,
+      ...responsiveFontSizes(12, 12, 12, 12)
+    }
+  };
 };
 
 export { typography, fontFamilies };
