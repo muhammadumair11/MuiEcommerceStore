@@ -12,13 +12,13 @@ const Card = styled('div')(({ theme }) => ({
   minHeight: '230px'
 }));
 
-function TextCard({ data }) {
+function BrandTextCard({ data }) {
   return (
     <Card>
-      <IconWrapper marginY={10} size={30}>
+      <IconWrapper marginy={10} size={30}>
         <Image source={data.icon} />
       </IconWrapper>
-      <Typography variant="h4" paddingY={1} color="primary.dark">
+      <Typography variant="h4" paddingy={1} color="primary.dark">
         {data.title}
       </Typography>
       <Typography variant="subtitle1" color="primary.dark">
@@ -28,8 +28,8 @@ function TextCard({ data }) {
   );
 }
 
-TextCard.propTypes = {
+BrandTextCard.propTypes = {
   data: PropTypes.object
 };
 
-export default TextCard;
+export default BrandTextCard;

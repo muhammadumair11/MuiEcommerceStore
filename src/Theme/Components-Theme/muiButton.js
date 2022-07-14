@@ -12,8 +12,7 @@ export const muiButton = {
       color: customPrimaryColors.main
     },
     sizeSmall: {
-      padding: '1.5rem .2rem',
-      maxWidth: '150px'
+      padding: '1.2rem 2rem'
     },
     sizeMedium: {
       padding: '1.8rem 2rem',

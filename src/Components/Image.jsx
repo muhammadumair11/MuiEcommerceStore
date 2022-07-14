@@ -9,10 +9,10 @@ const MyImg = styled('img')(({ theme }) => ({
 
 const MyBgImg = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '80%',
+  height: '100%',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'top'
+  backgroundPosition: 'center'
 }));
 
 function Image({ source, backgroundImg }) {

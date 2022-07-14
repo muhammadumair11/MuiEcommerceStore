@@ -1,7 +1,7 @@
 import { Container, Grid, styled, Typography } from '@mui/material';
 
 import React from 'react';
-import TextCard from '../../Common/TextCard/TextCard';
+import BrandTextCard from '../../Common/BrandTextCard/BrandTextCard';
 import { TextCardConstants } from '../../Constants/TextCardConstants';
 
 const Heading = styled('div')(({ theme }) => ({
@@ -21,7 +21,7 @@ function CardBlock() {
       <Grid container spacing={2}>
         {TextCardConstants.map((data, index) => (
           <Grid item key={index} lg={3} md={6} sm={12}>
-            <TextCard data={data} />
+            <BrandTextCard data={data} />
           </Grid>
         ))}
       </Grid>

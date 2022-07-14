@@ -20,17 +20,17 @@ const MyNavbar = styled('div')(({ theme }) => ({
 function Navbar() {
   return (
     <MyNavbar>
-      <IconWrapper marginX={10} size={20}>
+      <IconWrapper marginx={10} size={20}>
         <Image source={SearchIcon} />
       </IconWrapper>
       <Typography variant="h3" color="initial">
         AVION
       </Typography>
       <div style={{ display: 'flex' }}>
-        <IconWrapper marginX={10} size={20}>
+        <IconWrapper marginx={10} size={20}>
           <Image source={CartIcon} />
         </IconWrapper>
-        <IconWrapper marginX={10} size={20}>
+        <IconWrapper marginx={10} size={20}>
           <Image source={AccountIcon} />
         </IconWrapper>
       </div>

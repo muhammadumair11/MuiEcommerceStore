@@ -1,9 +1,9 @@
-import { Container, Grid, styled, Typography } from '@mui/material';
+import { Container, Grid, styled } from '@mui/material';
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import MyButton from '../../Components/MyButton';
 
 import heroImage from '../../Assets/Images/heroImage.jpg';
+import FeatureTextBox from '../../Common/FeatureTextBox/FeatureTextBox';
 
 const MyHero = styled('div')(({ theme }) => ({
   width: '100%',
@@ -21,16 +21,15 @@ const MyHero = styled('div')(({ theme }) => ({
   backgroundSize: 'cover'
 }));
 
-const HeroBox = styled('div')(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  flexDirection: 'column',
-
-  padding: '2rem',
-  minHeight: '350px',
-
-  backgroundColor: theme.palette.secondary.light
-}));
+const FeatureBoxText = {
+  data: {
+    title: 'Luxury homeware for people who love timeless design quality',
+    content: 'Shop the new Spring 2022 collection today'
+  },
+  options: {
+    variant: 'secondary'
+  }
+};
 
 function TextCardBlock({ image }) {
   function imageCheck() {
@@ -46,17 +45,7 @@ function TextCardBlock({ image }) {
         <Grid container>
           <Grid item lg={6} xs={12}></Grid>
           <Grid item lg={6} xs={12}>
-            <HeroBox>
-              <div>
-                <Typography variant="h2" color="initial">
-                  Luxury homeware for people who love timeless design quality
-                </Typography>
-                <Typography variant="body1" paddingY={1} color="primary.light">
-                  Shop the new Spring 2022 collection today
-                </Typography>
-              </div>
-              <MyButton color="secondary">View Collection</MyButton>
-            </HeroBox>
+            <FeatureTextBox content={FeatureBoxText.data} options={FeatureBoxText.options} />
           </Grid>
         </Grid>
       </Container>

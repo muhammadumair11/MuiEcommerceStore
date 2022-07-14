@@ -2,37 +2,68 @@ import styled from '@emotion/styled';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../../Components/Image';
+import { PropTypes } from 'prop-types';
+import MyButton from '../../Components/MyButton';
 
 const MyBox = styled(Box)(({ theme }) => ({
   color: theme.palette.primary.main,
-  height: '450px',
+  height: '500px',
+  transition: theme.transitions.create('all'),
+
+  '&:hover': {
+    height: '480px',
+    boxShadow: theme.shadows[10],
+    padding: '3rem'
+  },
 
   [theme.breakpoints.down('md')]: {
-    height: '250px'
+    height: '250px',
+    '&:hover': {
+      height: '230px',
+      boxShadow: theme.shadows[10],
+      padding: '3rem'
+    }
   }
 }));
 
+const ImageBox = styled('div')(({ theme }) => ({
+  height: '80%'
+}));
 const TitleBox = styled('div')(({ theme }) => ({
+  height: '20%',
   padding: '10px 0'
 }));
 
-function ProductCard() {
+function ProductCard({ item }) {
+  const [cardHover, setCardHover] = React.useState(false);
   return (
-    <MyBox>
-      <Image
-        backgroundImg
-        source="https://images.unsplash.com/photo-1657336641332-d0bef6ada5e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-      />
+    <MyBox
+      onMouseEnter={() => setCardHover(!cardHover)}
+      onMouseLeave={() => setCardHover(!cardHover)}>
+      <ImageBox>
+        <Image backgroundImg source={item.image} />
+      </ImageBox>
       <TitleBox>
         <Typography variant="h5" color="primary">
-          The Dandy Chair
+          {item.name}
         </Typography>
         <Typography variant="subtitle1" color="initial">
-          $ 542
+          $ {item.price}
         </Typography>
       </TitleBox>
+      {cardHover && (
+        <Box>
+          <MyButton size="small" fullWidth>
+            Add to Cart
+          </MyButton>
+        </Box>
+      )}
     </MyBox>
   );
 }
+
+ProductCard.propTypes = {
+  item: PropTypes.object
+};
 
 export default ProductCard;
