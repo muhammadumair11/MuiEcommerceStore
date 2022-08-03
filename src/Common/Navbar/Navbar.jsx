@@ -6,6 +6,7 @@ import AccountIcon from '../../Assets/svgIcon/accountIcon.svg';
 import SearchIcon from '../../Assets/svgIcon/searchIcon.svg';
 import CartIcon from '../../Assets/svgIcon/cartIcon.svg';
 import { IconWrapper } from '../Wrappers/IconWrapper';
+import { Link } from 'react-router-dom';
 
 const MyNavbar = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.secondary.light,
@@ -27,9 +28,11 @@ function Navbar() {
       <IconWrapper marginx={10} size={20}>
         <Image source={SearchIcon} />
       </IconWrapper>
-      <Typography variant="h3" color="initial">
-        AVION
-      </Typography>
+      <Link to={'/'}>
+        <Typography variant="h3" color="initial">
+          AVION
+        </Typography>
+      </Link>
       <div style={{ display: 'flex' }}>
         <IconWrapper marginx={10} size={20}>
           <Image source={CartIcon} />

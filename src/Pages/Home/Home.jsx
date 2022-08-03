@@ -4,6 +4,7 @@ import ProductList from '../../Common/ProuctCardList/ProductList';
 import TextCardBlock from './TextCardBlock';
 import FeaturesBlock from './FeaturesBlock';
 import NewLetterBlock from './NewLetterBlock';
+import { Container } from '@mui/material';
 // import { PropTypes } from 'prop-types';
 
 function Home() {
@@ -11,7 +12,9 @@ function Home() {
     <>
       <TextCardBlock />
       <CardBlock />
-      <ProductList data={4} />
+      <Container sx={{ py: 6 }}>
+        <ProductList data={4} />
+      </Container>
       <FeaturesBlock />
       <NewLetterBlock />
     </>

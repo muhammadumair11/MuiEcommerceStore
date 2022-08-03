@@ -1,6 +1,10 @@
-import { Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import ProductCarousel from '../../Common/ProductCarousel/ProductCarousel';
+import ProductList from '../../Common/ProuctCardList/ProductList';
+import CardBlock from '../Home/CardBlock';
+import NewLetterBlock from '../Home/NewLetterBlock';
+import Listing from './Listing';
 
 function ProductDetail() {
   return (
@@ -9,17 +13,23 @@ function ProductDetail() {
         <ProductCarousel />
       </Grid>
       <Grid item lg={6} md={12} sm={12}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, non voluptatum laboriosam
-        maiores delectus voluptas consectetur cum perferendis minus quod doloremque culpa ullam
-        accusantium, repudiandae qui enim earum! Ratione, fuga! Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Quia, non voluptatum laboriosam maiores delectus voluptas
-        consectetur cum perferendis minus quod doloremque culpa ullam accusantium, repudiandae qui
-        enim earum! Ratione, fuga! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
-        non voluptatum laboriosam maiores delectus voluptas consectetur cum perferendis minus quod
-        doloremque culpa ullam accusantium, repudiandae qui enim earum! Ratione, fuga! Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Quia, non voluptatum laboriosam maiores
-        delectus voluptas consectetur cum perferendis minus quod doloremque culpa ullam accusantium,
-        repudiandae qui enim earum! Ratione, fuga!
+        <Listing />
+      </Grid>
+      <Grid width="100%" item lg={12} md={12} sm={12}>
+        <Container>
+          <Box paddingTop={14} paddingBottom={4}>
+            <Typography variant="h2" color="primary.dark">
+              You Also might like this
+            </Typography>
+          </Box>
+          <ProductList data={4} />
+        </Container>
+      </Grid>
+      <Grid width="100%" item lg={12} md={12} sm={12}>
+        <CardBlock />
+      </Grid>
+      <Grid width="100%" paddingTop={8} item lg={12} md={12} sm={12}>
+        <NewLetterBlock />
       </Grid>
     </Grid>
   );

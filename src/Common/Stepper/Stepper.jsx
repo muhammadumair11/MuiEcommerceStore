@@ -10,7 +10,7 @@ const MyBox = styled(Box)(({ theme }) => ({
   width: 'fit-content',
   textAlign: 'center',
   color: theme.palette.primary.main,
-  padding: theme.spacing(2)
+  padding: theme.spacing(1)
 }));
 
 function IconButton(props) {
