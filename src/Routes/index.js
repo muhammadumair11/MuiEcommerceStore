@@ -7,6 +7,7 @@ function CustomRoutes() {
   const routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: '/about', element: <Home /> },
+    { path: '/product', element: <SingleProduct /> },
     { path: '/product/:id', element: <SingleProduct /> }
   ]);
   return routes;

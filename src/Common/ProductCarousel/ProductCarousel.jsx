@@ -16,7 +16,7 @@ const ProductCarouselWrapper = styled('div')(({ theme }) => ({
   backgroundPosition: 'center',
 
   [theme.breakpoints.down('md')]: {
-    height: '80vh'
+    height: '90vh'
   }
 }));
 

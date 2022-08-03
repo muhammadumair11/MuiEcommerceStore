@@ -17,7 +17,7 @@ const MyBox = styled(Box)(({ theme }) => ({
   },
 
   [theme.breakpoints.down('md')]: {
-    height: '250px',
+    width: '90vw',
     '&:hover': {
       boxShadow: theme.shadows[10],
       padding: '3rem'

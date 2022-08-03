@@ -9,9 +9,9 @@ import { productList } from '../../Constants/ProductsConstants';
 function ProductList({ data }) {
   return (
     <Container sx={{ py: 15 }}>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2}>
         {[...productList.slice(0, data)].map((item, i) => (
-          <Grid item key={i} lg={3} md={6} sm={6}>
+          <Grid item key={i} lg={3} md={6} sm={12}>
             <ProductCard item={item} />
           </Grid>
         ))}
