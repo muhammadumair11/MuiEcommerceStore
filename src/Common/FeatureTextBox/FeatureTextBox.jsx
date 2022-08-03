@@ -12,7 +12,7 @@ function FeatureTextBox({ content, options }) {
   };
   return (
     <>
-      <HeroBox primary={varientCheck.varientBg}>
+      <HeroBox minheight={options.height} primary={varientCheck.varientBg}>
         <div>
           <Typography variant="h2" color={varientCheck.titleText}>
             {content.title}

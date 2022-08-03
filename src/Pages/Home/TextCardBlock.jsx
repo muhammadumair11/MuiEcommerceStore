@@ -27,7 +27,8 @@ const FeatureBoxText = {
     content: 'Shop the new Spring 2022 collection today'
   },
   options: {
-    variant: 'secondary'
+    variant: 'secondary',
+    height: 350
   }
 };
 

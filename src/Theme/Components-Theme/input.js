@@ -13,14 +13,13 @@ export const inputTextFilledInput = {
     color: 'primary'
   },
   styleOverrides: {
-    root: {
-      color: customPrimaryColors.main
-    },
     colorPrimary: {
-      backgroundColor: customPrimaryColors.light
+      backgroundColor: customPrimaryColors.light,
+      color: customSecondaryColors.main
     },
     colorSecondary: {
-      backgroundColor: customSecondaryColors.main
+      backgroundColor: customSecondaryColors.main,
+      color: customSecondaryColors.main
     },
     input: {
       padding: '1rem 2rem',

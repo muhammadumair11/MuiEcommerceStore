@@ -16,7 +16,7 @@ function ProductList({ data }) {
           </Grid>
         ))}
       </Grid>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" paddingTop={6} justifyContent="center">
         <MyButton color="secondary">View Collection</MyButton>
       </Box>
     </Container>

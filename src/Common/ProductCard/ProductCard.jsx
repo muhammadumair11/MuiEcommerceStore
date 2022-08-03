@@ -4,6 +4,7 @@ import React from 'react';
 import Image from '../../Components/Image';
 import { PropTypes } from 'prop-types';
 import MyButton from '../../Components/MyButton';
+import { Link } from 'react-router-dom';
 
 const MyBox = styled(Box)(({ theme }) => ({
   color: theme.palette.primary.main,
@@ -11,7 +12,6 @@ const MyBox = styled(Box)(({ theme }) => ({
   transition: theme.transitions.create('all'),
 
   '&:hover': {
-    height: '480px',
     boxShadow: theme.shadows[10],
     padding: '3rem'
   },
@@ -19,7 +19,6 @@ const MyBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     height: '250px',
     '&:hover': {
-      height: '230px',
       boxShadow: theme.shadows[10],
       padding: '3rem'
     }
@@ -40,17 +39,19 @@ function ProductCard({ item }) {
     <MyBox
       onMouseEnter={() => setCardHover(!cardHover)}
       onMouseLeave={() => setCardHover(!cardHover)}>
-      <ImageBox>
-        <Image backgroundImg source={item.image} />
-      </ImageBox>
-      <TitleBox>
-        <Typography variant="h5" color="primary">
-          {item.name}
-        </Typography>
-        <Typography variant="subtitle1" color="initial">
-          $ {item.price}
-        </Typography>
-      </TitleBox>
+      <Link to={`/product/${item.id}`}>
+        <ImageBox>
+          <Image backgroundImg source={item.image} />
+        </ImageBox>
+        <TitleBox>
+          <Typography variant="h5" color="primary">
+            {item.name}
+          </Typography>
+          <Typography variant="subtitle1" color="initial">
+            $ {item.price}
+          </Typography>
+        </TitleBox>
+      </Link>
       {cardHover && (
         <Box>
           <MyButton size="small" fullWidth>

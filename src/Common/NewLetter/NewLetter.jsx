@@ -28,7 +28,11 @@ function NewLetter(props) {
     );
   }
 
-  return <Stack direction="flex">{props.primary ? primaryInput() : secondaryInput()}</Stack>;
+  return (
+    <Stack direction="flex" width="100%">
+      {props.primary ? primaryInput() : secondaryInput()}
+    </Stack>
+  );
 }
 NewLetter.propTypes = {
   primary: PropTypes.bool
