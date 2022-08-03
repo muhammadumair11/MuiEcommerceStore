@@ -14,7 +14,11 @@ const MyNavbar = styled('div')(({ theme }) => ({
   justifyContent: 'space-between',
   padding: '1rem 2rem',
   borderBottom: '1px solid',
-  borderColor: theme.palette.secondary.main
+  borderColor: theme.palette.secondary.main,
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none'
+  }
 }));
 
 function Navbar() {

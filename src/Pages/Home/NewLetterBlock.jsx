@@ -61,7 +61,7 @@ function NewLetterBlock() {
                   title: 'Large discounts'
                 }
               ].map((item, index) => (
-                <Grid item key={index} lg={4} md={12} sm={12}>
+                <Grid item key={index} width="100%" lg={4} md={12} sm={12}>
                   <Box display="flex" justifyContent="center" paddingY={3}>
                     <IconWrapper size={15} marginx={10}>
                       <Image source={item.icon} />

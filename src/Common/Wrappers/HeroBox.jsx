@@ -7,6 +7,8 @@ export const HeroBox = styled('div', {
   justifyContent: 'space-between',
   flexDirection: 'column',
 
+  borderRadius: theme.shape.borderRadius,
+
   padding: '2rem',
   minHeight: `${minheight}px`,
 
