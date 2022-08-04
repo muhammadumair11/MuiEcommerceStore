@@ -2,6 +2,7 @@
 import { styled } from '@mui/material';
 import React, { useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
+import Trails from '../../Components/TransitionComponents/Trails';
 import { productList } from '../../Constants/ProductsConstants';
 
 const ProductCarouselWrapper = styled('div')(({ theme }) => ({
@@ -81,25 +82,27 @@ function ProductCarousel() {
               ...props,
               backgroundImage: `url(${items.image})`
             }}></ProductCarouselWrapper>
-          {productList.length > 5
-            ? [...productList.slice(0, 5)].map((item, index) => (
-                <PreviewTemplates
-                  key={item.id}
-                  onClick={() => set(item.id)}
-                  style={{
-                    backgroundImage: `url(${item.image})`,
-                    top: `${(index + 1) * 80}px`
-                  }}></PreviewTemplates>
-              ))
-            : productList.map((item, index) => (
-                <PreviewTemplates
-                  key={item.id}
-                  onClick={() => set(item.id)}
-                  style={{
-                    backgroundImage: `url(${item.image})`,
-                    top: `${(index + 1) * 80}px`
-                  }}></PreviewTemplates>
-              ))}
+          <Trails>
+            {productList.length > 5
+              ? [...productList.slice(0, 5)].map((item, index) => (
+                  <PreviewTemplates
+                    key={item.id}
+                    onClick={() => set(item.id)}
+                    style={{
+                      backgroundImage: `url(${item.image})`,
+                      top: `${(index + 1) * 80}px`
+                    }}></PreviewTemplates>
+                ))
+              : productList.map((item, index) => (
+                  <PreviewTemplates
+                    key={item.id}
+                    onClick={() => set(item.id)}
+                    style={{
+                      backgroundImage: `url(${item.image})`,
+                      top: `${(index + 1) * 80}px`
+                    }}></PreviewTemplates>
+                ))}
+          </Trails>
         </>
       ))}
     </div>
