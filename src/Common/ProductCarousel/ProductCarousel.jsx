@@ -82,7 +82,7 @@ function ProductCarousel() {
               ...props,
               backgroundImage: `url(${items.image})`
             }}></ProductCarouselWrapper>
-          <Trails>
+          <Trails delay={1500}>
             {productList.length > 5
               ? [...productList.slice(0, 5)].map((item, index) => (
                   <PreviewTemplates

@@ -1,12 +1,12 @@
 import React from 'react';
 import { animated, config, useTrail } from 'react-spring';
 
-function Trails({ children, open }) {
+function Trails({ children, delay }) {
   const items = React.Children.toArray(children);
   const trails = useTrail(items.length, {
     config: config.gentle,
 
-    delay: 700,
+    delay,
     from: { opacity: 0, x: -20 },
     to: { opacity: 1, x: 0 }
   });

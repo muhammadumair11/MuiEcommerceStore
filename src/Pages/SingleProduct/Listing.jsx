@@ -24,7 +24,7 @@ function Listing() {
   return (
     <Container>
       <Box padding={4}>
-        <Trails open={true}>
+        <Trails delay={700}>
           <Typography variant="h2" marginBottom={1} color="primary.dark">
             The Dandy Chair
           </Typography>
