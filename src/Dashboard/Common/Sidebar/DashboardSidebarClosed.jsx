@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, styled, Tooltip, Typography } from '@mui/material';
 import Trails from '../../../Components/TransitionComponents/Trails';
 import { KeyboardArrowRight, PeopleAltRounded, PersonRounded } from '@mui/icons-material';
+import DashboarIconWrapper from '../Wrapper/DashboardIconWrapper';
 
 const DashboarSidebarClosedWrapper = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.secondary.light,
@@ -11,17 +12,6 @@ const DashboarSidebarClosedWrapper = styled('div')(({ theme }) => ({
 
   boxShadow: theme.shadows[9],
   boxShadowColor: theme.palette.primary.dark
-}));
-
-const DashboarIconWrapper = styled('div', {
-  shouldForwardProp: (prop) => prop !== 'noPadding'
-})(({ theme, nopadding }) => ({
-  textAlign: 'center',
-  padding: nopadding ? '0' : theme.spacing(1),
-  //   backgroundColor: theme.palette.primary.main,
-  fontSize: '1.5rem',
-  color: theme.palette.primary.main,
-  lineHeight: '0'
 }));
 
 function DashboardSidebarClosed({ value, setSidebar }) {
@@ -33,18 +23,18 @@ function DashboardSidebarClosed({ value, setSidebar }) {
             <Typography variant="h5" color="primary.main" lineHeight={0}>
               AVION
             </Typography>
-            <DashboarIconWrapper nopadding>
+            <DashboarIconWrapper nopadding primary>
               <KeyboardArrowRight />
             </DashboarIconWrapper>
           </Box>
           <Box paddingY={5}>
             <Trails delay={800}>
-              <DashboarIconWrapper>
+              <DashboarIconWrapper primary>
                 <Tooltip title="Users">
                   <PeopleAltRounded />
                 </Tooltip>
               </DashboarIconWrapper>
-              <DashboarIconWrapper>
+              <DashboarIconWrapper primary>
                 <Tooltip title="Partners">
                   <PersonRounded />
                 </Tooltip>
