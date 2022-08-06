@@ -6,6 +6,7 @@ import { muiButton } from './Components-Theme/muiButton';
 import { customPrimaryColors, customSecondaryColors } from './customColors';
 import { inputTextField, inputTextFilledInput } from './Components-Theme/input';
 import { themeBreakPoints } from './Components-Theme/breakPoints';
+import shadows from '@mui/material/styles/shadows';
 
 const theme = createTheme({
   breakpoints: {
@@ -13,6 +14,7 @@ const theme = createTheme({
       ...themeBreakPoints.values
     }
   },
+  shadows: [...shadows],
   palette: {
     primary: {
       ...customPrimaryColors
@@ -35,6 +37,11 @@ const theme = createTheme({
     },
     MuiFilledInput: {
       ...inputTextFilledInput
+    },
+    MuiTooltip: {
+      defaultProps: {
+        placement: 'right'
+      }
     }
   }
 });

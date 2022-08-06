@@ -3,6 +3,7 @@ import { Container, Grid, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
+import Trails from '../../Components/TransitionComponents/Trails';
 const MyNavbar = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.secondary.light,
   width: '100%',
@@ -68,9 +69,11 @@ function NavbarMobile() {
             <Container>
               <Grid container>
                 <Grid item xs={6} padding={2}>
-                  <Typography variant="h3" color="secondary.light">
-                    AVION
-                  </Typography>
+                  <Trails delay={500}>
+                    <Typography variant="h3" color="secondary.light">
+                      AVION
+                    </Typography>
+                  </Trails>
                 </Grid>
                 <Grid item xs={6} padding={2}>
                   <HamburgerWrapper onClick={() => setSideBarOpen(!sideBarOpen)}>

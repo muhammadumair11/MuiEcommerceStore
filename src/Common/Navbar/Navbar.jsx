@@ -35,7 +35,9 @@ function Navbar() {
       </Link>
       <div style={{ display: 'flex' }}>
         <IconWrapper marginx={10} size={20}>
-          <Image source={CartIcon} />
+          <Link to={'/cart'}>
+            <Image source={CartIcon} />
+          </Link>
         </IconWrapper>
         <IconWrapper marginx={10} size={20}>
           <Image source={AccountIcon} />
